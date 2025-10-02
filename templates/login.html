@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+            font-family: Arial, sans-serif;
+        }
+
+        .auth-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .auth-card {
+            width: 350px;
+            background: #2b0054;
+            border-radius: 20px;
+            padding: 40px 30px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .auth-title {
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        /* Box around button */
+        .button-box {
+            background: #6d4aaa;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .auth-button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .auth-footer {
+            margin-top: 30px;
+        }
+
+        .auth-footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 500px) {
+            .auth-card { width: 95%; padding: 30px 20px; }
+            .auth-button { font-size: 14px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <h2 class="auth-title">Log in</h2>
+
+            {% if message %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+
+            <form method="POST" class="auth-form">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                
+                <!-- Button box -->
+                <div class="button-box">
+                    <button type="submit" class="auth-button">Log in</button>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <a href="{{ url_for('register') }}">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

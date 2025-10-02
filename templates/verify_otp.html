@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#f3f3f3; font-family: Arial,sans-serif; }
+        .otp-wrapper { width:100%; max-width:400px; background:#2b0054; border-radius:20px; padding:30px; color:white; text-align:center; box-sizing:border-box; }
+        input { width:100%; padding:12px; margin-bottom:15px; border:none; border-radius:5px; outline:none; font-size:16px; }
+        button { width:100%; padding:12px; background:#6d4aaa; color:white; border:none; border-radius:5px; cursor:pointer; font-size:16px; }
+        button:hover { background:#5a3b8c; }
+        h2 { margin-bottom:20px; }
+    </style>
+</head>
+<body>
+    <div class="otp-wrapper">
+        <h2>Enter OTP</h2>
+        <form method="POST">
+            <input type="text" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:#f3f3f3; font-family: Arial,sans-serif; }
+        .container { width:100%; max-width:400px; background:white; padding:30px; border-radius:15px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+        h2 { margin-bottom:10px; color:#2b0054; font-size:22px; }
+        p { color:#444; margin-bottom:20px; font-size:16px; }
+        a.button { display:block; margin:10px 0; padding:12px; background:#2b0054; color:white; text-decoration:none; border-radius:5px; font-size:16px; transition:0.2s; }
+        a.button:hover { background:#4d1e8a; }
+        a.logout { background:#888; }
+        a.logout:hover { background:#6b6b6b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome {{ name }}!</h2>
+        <p>You can link your projects to open your server url with this page and to do this you can link your server url with the "Href function or any other linking function "</p>
+
+      
+        <a class="button logout" href="{{ url_for('login') }}">Logout</a>
+    </div>
+</body>
+</html>
